@@ -5,34 +5,34 @@
     <title>Title</title>
     <style>
         .class{
-            width: 50%;
-            height: 300px;
-            font-size: 50px;
+            width: 100px;
+            height: 100px;
         }
     </style>
 </head>
 <body>
-<textarea id="demo" onkeydown="nhap()" class="class"></textarea>
-
+<h1> THANH CÓ BỊ ĐIÊN KHÔNG</h1>
+<input type="button" value="YES" class="class" onclick="yes()">
+<input type="button" id="no" value="NO" class="class">
 </body>
 </html>
 <script>
-    let arr=["T","Ô","I"," ",'L',"À"," ","T",'H',"A","N","H",".",' ',"T","Ô","I"," ","B","Ị"," ","Đ","I","Ê","N","!","!"];
-    let res = "";
-    function nhap() {
-        let a = document.getElementById("demo");
-        if (a.value.length > 0) {
-            for (let i = 0; i < a.value.length; i++) {
-                res += arr[i]
-                if (i === arr.length+1) {
-                    a.value = "";
-                    res = "";
-                }
-            }
-        }
-        a.value=res;
-        res="";
-        setTimeout("nhap()",1);
+    let btNo = null;
+    btNo=document.getElementById("no");
+    btNo.onmouseover=function() {no()}
+    let a=window.innerHeight;
+    let b=window.innerWidth;
+    function yes(){
+        alert("ĐÚNG RỒI :V");
     }
-
+    function init(){
+        btNo.style.position='relative';
+        btNo.style.top='0px';
+        btNo.style.left='0px';
+    }
+    function no(){
+        btNo.style.top=Math.round(Math.random()*a)+'px';
+        btNo.style.left=Math.round(Math.random()*b)+'px';
+    }
+    window.onload=init;
 </script>
